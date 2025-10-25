@@ -25,3 +25,23 @@ function setSocial(){
   qs('#githubLink')?.setAttribute('href', github);
   const yearEl = document.getElementById('year'); if(yearEl) yearEl.textContent = new Date().getFullYear();
 }
+// --- Tag helpers (IDs -> Names) ---
+let TAGS_LOOKUP = {};
+
+async function loadTagsLookup() {
+  try {
+    const res = await fetch(`${WP_API}/tags?per_page=100`);
+    const items = await res.json();
+    TAGS_LOOKUP = Object.fromEntries(items.map(t => [t.id, t.name]));
+  } catch (e) {
+    TAGS_LOOKUP = {};
+  }
+}
+
+// Return array of tag names for a post
+function tagNames(post) {
+  // Some WP setups (Jetpack) already include names:
+  if (Array.isArray(post.tags_names)) return post.tags_names;
+  // Otherwise map numeric IDs -> names
+  return (post.tags || []).map(id => TAGS_LOOKUP[id]).filter(Boolean);
+}
