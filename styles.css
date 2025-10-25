@@ -30,7 +30,24 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
 .item{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
-.item h3{margin:4px 0 6px}
+/* Card title */
+.item h3{
+  margin:4px 0 6px;
+  font-size:20px;
+  line-height:1.35;
+}
+
+.item h3 a{
+  color:#fff;                 /* bright */
+  font-weight:800;            /* bold */
+  text-decoration:none;       /* clean */
+}
+
+.item h3 a:hover,
+.item h3 a:focus{
+  color:var(--accent2);       /* subtle pop on hover */
+  text-decoration:underline;  /* good accessibility */
+}
 .item .meta{color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:space-between}
 .item .excerpt{color:#cbd5e1}
 .item .badge{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
