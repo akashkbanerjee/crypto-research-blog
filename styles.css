@@ -1,0 +1,57 @@
+/* Vibrant crypto theme */
+:root{
+  --bg:#070815; --text:#e5e7eb; --muted:#9ca3af;
+  --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.12);
+  --accent1:#7c3aed; --accent2:#06b6d4; --accent3:#f59e0b; --accent4:#22c55e;
+  --ring: rgba(124,58,237,.35); --maxw:1100px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.topbar{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));border-bottom:1px solid var(--border)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .dot{width:9px;height:9px;border-radius:999px;background:#fff}
+.brand-name{color:#fff;text-decoration:none;font-weight:800}
+.tagline{background:#fff;color:#0b0f19;border-radius:999px;padding:4px 10px;font-size:12px;margin-left:8px}
+.social a{color:#fff;opacity:.9;margin-left:12px;text-decoration:none}
+.social a:hover{opacity:1}
+
+.hero{padding:40px 0 10px;text-align:center}
+.gradient{background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3),var(--accent4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--muted)}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid var(--border);padding:20px;border-radius:18px;margin:18px 0;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.filters-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:#12142a;border:1px solid rgba(255,255,255,.14);color:#e5e7eb;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:600}
+.chip:hover{border-color:#fff}
+.chip.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 0 0 3px var(--ring);}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.item{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+.item h3{margin:4px 0 6px}
+.item .meta{color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:space-between}
+.item .excerpt{color:#cbd5e1}
+.item .badge{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.16)}
+.item a.cta{margin-top:auto;display:inline-block;text-decoration:none;font-weight:700;padding:10px 12px;border-radius:12px;background:linear-gradient(90deg,var(--accent2),var(--accent4));color:#041016}
+.item a.cta:hover{filter:brightness(1.05)}
+.pager{display:flex;justify-content:space-between;margin-top:10px}
+
+.footer{padding:40px 0 60px;color:#a1a1aa;text-align:center}
+
+.article{padding:24px 0}
+.article-card{max-width:860px;margin:0 auto}
+.article-hero{height:260px;border-radius:16px;background:linear-gradient(135deg,var(--accent2),var(--accent1));border:1px solid var(--border);margin:12px 0 18px;display:flex;align-items:end;justify-content:flex-start;overflow:hidden}
+.article-hero img{width:100%;height:100%;object-fit:cover}
+.meta{color:var(--muted);font-size:14px;margin:6px 0 10px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tag{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06)}
+.content img{max-width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+.content blockquote{border-left:3px solid var(--accent2);padding-left:12px;color:#cbd5e1}
+.content pre{overflow:auto;background:#0c1222;border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px}
+.content code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+.share{display:flex;gap:10px;margin-top:18px}
+
+@media (max-width: 950px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 640px){ .grid{grid-template-columns:1fr} .article-hero{height:200px} }
