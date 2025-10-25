@@ -1,6 +1,6 @@
 // scripts/api.js
 const CONFIG = {
-  WP_SITE: 'YOUR-SITE.wordpress.com',  // e.g. akashresearch.wordpress.com
+  WP_SITE: 'akashkbanerjee.wordpress.com',  // e.g. akashresearch.wordpress.com
   POSTS_PER_PAGE: 9,
   SOCIAL: {
     twitter: 'https://twitter.com/akashkbanerjee',
